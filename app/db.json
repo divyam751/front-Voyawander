@@ -1,0 +1,144 @@
+{
+  "places": [
+    {
+      "id": 1,
+      "name": "Shimla",
+      "price": "5000",
+      "image": "https://www.swantour.com/blogs/wp-content/uploads/2019/04/Adventure-Activities-in-Shimla.jpg",
+      "days": 4
+    },
+    {
+      "id": 2,
+      "name": "Manali",
+      "price": "6000",
+      "image": "https://i.ytimg.com/vi/FxXXHglhCTQ/maxresdefault.jpg",
+      "days": 5
+    },
+    {
+      "id": 3,
+      "name": "Darjeeling",
+      "price": "5500",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-02da8b592c4cb12279e3dd9e517c2720-lq",
+      "days": 6
+    },
+    {
+      "id": 4,
+      "name": "Mussoorie",
+      "price": "4500",
+      "image": "https://www.haribhoomi.com/h-upload/2023/04/02/1913088-mussoorie.webp",
+      "days": 3
+    },
+    {
+      "id": 5,
+      "name": "Ooty",
+      "price": "7000",
+      "image": "https://www.travel2ooty.com/images/must-visit-places-ooty.jpg",
+      "days": 6
+    },
+    {
+      "id": 6,
+      "name": "Nainital",
+      "price": "5500",
+      "image": "https://www.honeymoonbug.com/blog/wp-content/uploads/2023/01/Nainital.jpg",
+      "days": 5
+    },
+    {
+      "id": 7,
+      "name": "Munnar",
+      "price": "6000",
+      "image": "https://www.keralapackage.org/wp-content/uploads/2017/08/Munnar-big.jpg",
+      "days": 4
+    },
+    {
+      "id": 8,
+      "name": "Coorg",
+      "price": "5500",
+      "image": "https://holidayinfy.com/wp-content/uploads/2020/07/11-famous-Coorg-tourist-places.jpg",
+      "days": 5
+    },
+    {
+      "id": 9,
+      "name": "Kodaikanal",
+      "price": "6500",
+      "image": "https://i.ytimg.com/vi/ltT6a7dM7RU/maxresdefault.jpg",
+      "days": 5
+    },
+    {
+      "id": 10,
+      "name": "Gangtok",
+      "price": "6000",
+      "image": "https://www.footprintholiday.com/uploads/destination_image/1639111919-2021-12-10.jpg",
+      "days": 6
+    },
+    {
+      "id": 11,
+      "name": "Jaipur",
+      "price": "5000",
+      "image": "https://ghoomophiro.com/wp-content/uploads/2022/11/Places-to-visit-in-jaipur.jpg",
+      "days": 3
+    },
+    {
+      "id": 12,
+      "name": "Agra",
+      "price": "6000",
+      "image": "https://www.sunrisetajmahaltour.com/wp-content/uploads/2021/09/zigzag-hostel-agra.jpg",
+      "days": 2
+    },
+    {
+      "id": 13,
+      "name": "Varanasi",
+      "price": "5500",
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/be/17/41/caption.jpg?w=700&h=500&s=1",
+      "days": 4
+    },
+    {
+      "id": 14,
+      "name": "Goa",
+      "price": "8000",
+      "image": "https://www.kayak.co.in/rimg/himg/61/89/b7/leonardo-2620257-101156480-681214.jpg?width=1366&height=768&crop=true",
+      "days": 5
+    },
+    {
+      "id": 15,
+      "name": "Mumbai",
+      "price": "7000",
+      "image": "https://images.myguide-cdn.com/mumbai/companies/bollywood-filmcity-tour-with-mega-dance-show/large/bollywood-filmcity-tour-with-mega-dance-show-1250045.jpg",
+      "days": 4
+    },
+    {
+      "id": 16,
+      "name": "Delhi",
+      "price": "6500",
+      "image": "https://images.moneycontrol.com/static-mcnews/2021/08/India-Gate-New-Delhi.jpg?impolicy=website&width=770&height=431",
+      "days": 3
+    },
+    {
+      "id": 17,
+      "name": "Kolkata",
+      "price": "6000",
+      "image": "https://static.langimg.com/photo/imgsize-159152,msid-96063274/eisamay.jpg",
+      "days": 4
+    },
+    {
+      "id": 18,
+      "name": "Udaipur",
+      "price": "5500",
+      "image": "https://www.oyorooms.com/travel-guide/wp-content/uploads/2021/04/Blog-1-Jaipur-1.jpg",
+      "days": 3
+    },
+    {
+      "id": 19,
+      "name": "Amritsar",
+      "price": "6000",
+      "image": "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2022/3/21/amritsar-food-guide.jpg",
+      "days": 3
+    },
+    {
+      "id": 20,
+      "name": "Rishikesh",
+      "price": "5000",
+      "image": "https://i.ytimg.com/vi/9WNX1Uf9gls/maxresdefault.jpg",
+      "days": 4
+    }
+  ]
+}
