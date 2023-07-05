@@ -10,6 +10,7 @@ import SignupCard from "./Components/SignupCard";
 import SigninCard from "./Components/SigninCard";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import Search from "./Components/Search";
 
 // import { Card } from "@chakra-ui/react";
 
@@ -21,6 +22,7 @@ function App() {
       {/* <HomeContent /> */}
       {/* <Cards /> */}
       <PlaceCard />
+      <Search/>
       <SignupCard />
       <SigninCard />
       <Contact />
