@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/Main.css";
-import { Box, Button, Flex, WrapItem } from "@chakra-ui/react";
+import { Box, Button, WrapItem } from "@chakra-ui/react";
 import Logo from "../Images/Logo/Logo.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const navRef = useRef();
@@ -19,20 +20,23 @@ function Navbar() {
       <img src={Logo} alt='logo' style={{ height: 70 }} />
       <Box id='headerBox'>
         <nav ref={navRef}>
-          <a href='/#'>Home</a>
-          <a href='/#'>About Us</a>
-          <a href='/#'>Hotels</a>
-          <a href='/#'>Flights</a>
-          <a href='/#'>Holidays</a>
-          <a href='/#'>Contact Us</a>
+          <Link to='/'>Home </Link>
+          <Link to='/#'>About Us</Link>
+          <Link to='/#'>Hotels</Link>
+          <Link to='/#'>Flights</Link>
+          <Link to='/holidays'>Holidays</Link>
+          <Link to='/contact'>Contact Us</Link>
 
           <WrapItem>
             <Button colorScheme='orange' m={4}>
-              LogIn
+              <Link to='/signIn'>Sign In</Link>
             </Button>
           </WrapItem>
           <WrapItem>
-            <Button colorScheme='whatsapp'>Sign Up</Button>
+            {/* <Button colorScheme='whatsapp'>Sign Up</Button> */}
+            <Button colorScheme='whatsapp'>
+              <Link to='/signup'>Sign Up</Link>
+            </Button>
           </WrapItem>
 
           <button className='nav-btn nav-close-btn' onClick={showNavbar}>

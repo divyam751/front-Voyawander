@@ -7,9 +7,9 @@ import HomeContent from "./HomContent";
 const Home = () => {
   return (
     <div className='home-container'>
+      {/* // <div style={{ background: "black" }}> */}
       <Navbar />
       <video className='background-video' autoPlay loop muted>
-        {/* <source src={bgVideo} type='video/mp4' /> */}
         <source src={bg} type='video/mp4' />
       </video>
       <HomeContent />

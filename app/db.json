@@ -140,5 +140,47 @@
       "image": "https://i.ytimg.com/vi/9WNX1Uf9gls/maxresdefault.jpg",
       "days": 4
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Divyam",
+      "lastName": "Chauhan",
+      "email": "mi.divyam@gmail.com",
+      "password": "1234"
+    },
+    {
+      "firstName": "Raj",
+      "lastName": "Kumar",
+      "email": "raj.kumar@gmail.com",
+      "password": "2345",
+      "id": 2
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "Name": "Divyam",
+      "Email": "mi.divyam@gmail.com",
+      "Message": "Hello World"
+    },
+    {
+      "Name": "Raj Kumar",
+      "Email": "kumar.raj@gmail.com",
+      "Message": "Hi it's me, your team-mate",
+      "id": 2
+    },
+    {
+      "Name": "Harry Porter",
+      "Email": "porter.harry@gmail.com",
+      "Message": "I just wanted to express my sincere appreciation for the amazing user interface (UI) you've created. It's visually stunning and incredibly intuitive to navigate. Great job!",
+      "id": 3
+    },
+    {
+      "Name": "Saurabh",
+      "Email": "s.singh@gmail.com",
+      "Message": "Hi it's my message check  if update",
+      "id": 4
+    }
   ]
 }

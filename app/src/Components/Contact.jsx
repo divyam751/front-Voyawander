@@ -16,6 +16,7 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import {
   MdPhone,
@@ -25,14 +26,57 @@ import {
   MdOutlineEmail,
 } from "react-icons/md";
 import { BsInstagram, BsDiscord, BsPerson } from "react-icons/bs";
+import { useState } from "react";
+import axios from "axios";
 
 export default function Contact() {
+  const toast = useToast();
+  const [formData, setFormData] = useState({
+    Name: "",
+    Email: "",
+    Message: "",
+  });
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+  // Handle success
+  const handleSuccess = () => {
+    toast({
+      title: "Message sent.",
+      description: "Your message has been sent successfully.",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
+  };
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/messages",
+        formData
+      ); // Adjust the API endpoint accordingly
+      console.log(response.data); // Optional: Log the response data
+      // Reset the form after successful submission
+      handleSuccess();
+      setFormData({
+        Name: "",
+        Email: "",
+        Message: "",
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    // <Container bg='#9DC4FB' maxW='full' mt={0} centerContent overflow='hidden'>
     <Container bg='blue.200' maxW='full' mt={0} centerContent overflow='hidden'>
       <Flex>
         <Box
-          // bg='#02054B'
           bg='white'
           color='black'
           borderRadius='lg'
@@ -121,42 +165,57 @@ export default function Contact() {
                 <Box bg='green.100' borderRadius='lg'>
                   <Box m={8} color='black'>
                     <VStack spacing={5}>
-                      <FormControl id='name'>
+                      <FormControl id='Name'>
                         <FormLabel>Your Name</FormLabel>
                         <InputGroup borderColor='black'>
                           <InputLeftElement
                             pointerEvents='none'
                             children={<BsPerson color='gray.800' />}
                           />
-                          <Input type='text' size='md' />
+                          <Input
+                            type='text'
+                            size='md'
+                            id='Name'
+                            value={formData.Name}
+                            onChange={handleInputChange}
+                          />
                         </InputGroup>
                       </FormControl>
-                      <FormControl id='name'>
-                        <FormLabel>Mail</FormLabel>
+                      <FormControl id='Email'>
+                        <FormLabel>Email</FormLabel>
                         <InputGroup borderColor='black'>
                           <InputLeftElement
                             pointerEvents='none'
                             children={<MdOutlineEmail color='gray.800' />}
                           />
-                          <Input type='text' size='md' />
+                          <Input
+                            type='text'
+                            size='md'
+                            id='Email'
+                            value={formData.Email}
+                            onChange={handleInputChange}
+                          />
                         </InputGroup>
                       </FormControl>
-                      <FormControl id='name'>
+                      <FormControl id='Message'>
                         <FormLabel>Message</FormLabel>
                         <Textarea
                           borderColor='black'
                           _hover={{
                             borderRadius: "gray.300",
                           }}
-                          placeholder='message'
+                          placeholder='Enter your message'
+                          id='Message'
+                          value={formData.Message}
+                          onChange={handleInputChange}
                         />
                       </FormControl>
-                      <FormControl id='name' float='right'>
+                      <FormControl id='submit' float='right'>
                         <Button
                           variant='solid'
                           bg='#0D74FF'
                           color='white'
-                          _hover={{}}
+                          onClick={handleSubmit}
                         >
                           Send Message
                         </Button>

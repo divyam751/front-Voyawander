@@ -16,7 +16,7 @@
   /* --textColor: #e9ed09; */
   --textColor: #e9ed09;
   /* --textColor: #27ed09; */
-  /* --textColor: #030303; */
+  --textColorw: #ffffff;
 }
 
 header {
@@ -30,12 +30,16 @@ header {
 }
 
 header.transparent-navbar {
-  background-color: transparent; /* Set the background color to transparent */
+  background-color: transparent;
+  /* Set the background color to transparent */
   color: var(--textColor);
 }
 
 header.transparent-navbar nav a {
   color: var(--textColor); /* Set the link color to the desired color */
+}
+header.transparent-navbar nav button a {
+  color: var(--textColorw); /* Set the link color to the desired color */
 }
 
 nav a {
