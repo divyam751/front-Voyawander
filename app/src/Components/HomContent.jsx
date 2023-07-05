@@ -82,7 +82,7 @@ function HomeContent() {
                 transform={"rotate(10deg)"}
                 color={"white"}
               >
-                Starting at ₹ 1500/-
+                Starting at ₹ 3500/-
               </Text>
             </Box>
           </Stack>

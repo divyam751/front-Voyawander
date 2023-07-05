@@ -8,6 +8,9 @@ import Cards from "./Components/Cards";
 import PlaceCard from "./Components/PlaceCard";
 import SignupCard from "./Components/SignupCard";
 import SigninCard from "./Components/SigninCard";
+import Contact from "./Components/Contact";
+import Footer from "./Components/Footer";
+
 // import { Card } from "@chakra-ui/react";
 
 function App() {
@@ -20,6 +23,8 @@ function App() {
       <PlaceCard />
       <SignupCard />
       <SigninCard />
+      <Contact />
+      <Footer />
     </div>
   );
 }

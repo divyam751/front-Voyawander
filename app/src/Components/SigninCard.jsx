@@ -13,19 +13,23 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+import Logo from "../Images/Logo/Logo.png";
 export default function SigninCard() {
   return (
     <Flex
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      // bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue("green.500")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
+          <img src={Logo} alt='logo' width={250} />
           <Heading fontSize={"4xl"}>Sign in to your account</Heading>
-          <Text fontSize={"lg"} color={"gray.600"}>
-            to explore and booking your next trip ✌️{" "}
+          {/* <Text fontSize={"lg"} color={"gray.600"}> */}
+          <Text fontSize={"lg"} color={"white"}>
+            to explore and booking your next trip with us ✌️{" "}
           </Text>
         </Stack>
         <Box

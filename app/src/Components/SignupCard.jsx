@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   Link,
 } from "@chakra-ui/react";
+
 import { useState } from "react";
 import {
   ViewIcon,
@@ -31,7 +32,8 @@ export default function SignupCard() {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      // bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue("skyblue")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -39,7 +41,7 @@ export default function SignupCard() {
             Sign up
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            to explore and booking your next trip ✌️
+            to explore and booking your next trip with us ✌️
           </Text>
         </Stack>
         <Box
