@@ -74,160 +74,174 @@ export default function Contact() {
   };
 
   return (
-    <Container bg='blue.200' maxW='full' mt={0} centerContent overflow='hidden'>
-      <Flex>
-        <Box
-          bg='white'
-          color='black'
-          borderRadius='lg'
-          m={{ sm: 4, md: 16, lg: 10 }}
-          p={{ sm: 5, md: 5, lg: 16 }}
-        >
-          <Box p={4}>
-            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-              <WrapItem>
-                <Box>
-                  <Heading>Contact</Heading>
-                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color='gray.500'>
-                    Fill up the form below to contact
-                  </Text>
-                  <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                    <VStack pl={0} spacing={3} alignItems='flex-start'>
-                      <Button
-                        size='md'
-                        height='48px'
-                        width='200px'
-                        variant='ghost'
-                        color='black'
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdPhone color='#1970F1' size='20px' />}
-                      >
-                        +91-9719635838
-                      </Button>
-                      <Button
-                        size='md'
-                        height='48px'
-                        width='200px'
-                        variant='ghost'
-                        color='black'
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdEmail color='#1970F1' size='20px' />}
-                      >
-                        mi.divyam@gamil.com
-                      </Button>
-                      <Button
-                        size='md'
-                        height='48px'
-                        width='200px'
-                        variant='ghost'
-                        color='black'
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdLocationOn color='#1970F1' size='20px' />}
-                      >
-                        Noida, India
-                      </Button>
-                    </VStack>
-                  </Box>
-                  <HStack
-                    mt={{ lg: 10, md: 10 }}
-                    spacing={5}
-                    px={5}
-                    alignItems='flex-start'
-                  >
-                    <IconButton
-                      aria-label='facebook'
-                      variant='ghost'
-                      size='lg'
-                      isRound={true}
-                      _hover={{ bg: "green.200" }}
-                      icon={<MdFacebook size='28px' />}
-                    />
-                    <IconButton
-                      aria-label='github'
-                      variant='ghost'
-                      size='lg'
-                      isRound={true}
-                      _hover={{ bg: "green.200" }}
-                      icon={<BsInstagram size='28px' />}
-                    />
-                    <IconButton
-                      aria-label='discord'
-                      variant='ghost'
-                      size='lg'
-                      isRound={true}
-                      _hover={{ bg: "green.200" }}
-                      icon={<BsDiscord size='28px' />}
-                    />
-                  </HStack>
-                </Box>
-              </WrapItem>
-              <WrapItem>
-                <Box bg='green.100' borderRadius='lg'>
-                  <Box m={8} color='black'>
-                    <VStack spacing={5}>
-                      <FormControl id='Name'>
-                        <FormLabel>Your Name</FormLabel>
-                        <InputGroup borderColor='black'>
-                          <InputLeftElement
-                            pointerEvents='none'
-                            children={<BsPerson color='gray.800' />}
-                          />
-                          <Input
-                            type='text'
-                            size='md'
-                            id='Name'
-                            value={formData.Name}
-                            onChange={handleInputChange}
-                          />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id='Email'>
-                        <FormLabel>Email</FormLabel>
-                        <InputGroup borderColor='black'>
-                          <InputLeftElement
-                            pointerEvents='none'
-                            children={<MdOutlineEmail color='gray.800' />}
-                          />
-                          <Input
-                            type='text'
-                            size='md'
-                            id='Email'
-                            value={formData.Email}
-                            onChange={handleInputChange}
-                          />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id='Message'>
-                        <FormLabel>Message</FormLabel>
-                        <Textarea
-                          borderColor='black'
-                          _hover={{
-                            borderRadius: "gray.300",
-                          }}
-                          placeholder='Enter your message'
-                          id='Message'
-                          value={formData.Message}
-                          onChange={handleInputChange}
-                        />
-                      </FormControl>
-                      <FormControl id='submit' float='right'>
+    <Box mt={-40}>
+      {" "}
+      <Box bgColor={"#29335c"} h={160}></Box>
+      <Container
+        bg='blue.200'
+        maxW='full'
+        mt={0}
+        centerContent
+        overflow='hidden'
+        // p={40}
+        // marginTop={-40}
+      >
+        <Flex>
+          <Box
+            bg='white'
+            color='black'
+            borderRadius='lg'
+            m={{ sm: 4, md: 16, lg: 10 }}
+            p={{ sm: 5, md: 5, lg: 16 }}
+          >
+            <Box p={4}>
+              <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+                <WrapItem>
+                  <Box>
+                    <Heading>Contact</Heading>
+                    <Text mt={{ sm: 3, md: 3, lg: 5 }} color='gray.500'>
+                      Fill up the form below to contact
+                    </Text>
+                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                      <VStack pl={0} spacing={3} alignItems='flex-start'>
                         <Button
-                          variant='solid'
-                          bg='#0D74FF'
-                          color='white'
-                          onClick={handleSubmit}
+                          size='md'
+                          height='48px'
+                          width='200px'
+                          variant='ghost'
+                          color='black'
+                          _hover={{ border: "2px solid #1C6FEB" }}
+                          leftIcon={<MdPhone color='#1970F1' size='20px' />}
                         >
-                          Send Message
+                          +91-9719635838
                         </Button>
-                      </FormControl>
-                    </VStack>
+                        <Button
+                          size='md'
+                          height='48px'
+                          width='200px'
+                          variant='ghost'
+                          color='black'
+                          _hover={{ border: "2px solid #1C6FEB" }}
+                          leftIcon={<MdEmail color='#1970F1' size='20px' />}
+                        >
+                          mi.divyam@gamil.com
+                        </Button>
+                        <Button
+                          size='md'
+                          height='48px'
+                          width='200px'
+                          variant='ghost'
+                          color='black'
+                          _hover={{ border: "2px solid #1C6FEB" }}
+                          leftIcon={
+                            <MdLocationOn color='#1970F1' size='20px' />
+                          }
+                        >
+                          Noida, India
+                        </Button>
+                      </VStack>
+                    </Box>
+                    <HStack
+                      mt={{ lg: 10, md: 10 }}
+                      spacing={5}
+                      px={5}
+                      alignItems='flex-start'
+                    >
+                      <IconButton
+                        aria-label='facebook'
+                        variant='ghost'
+                        size='lg'
+                        isRound={true}
+                        _hover={{ bg: "green.200" }}
+                        icon={<MdFacebook size='28px' />}
+                      />
+                      <IconButton
+                        aria-label='github'
+                        variant='ghost'
+                        size='lg'
+                        isRound={true}
+                        _hover={{ bg: "green.200" }}
+                        icon={<BsInstagram size='28px' />}
+                      />
+                      <IconButton
+                        aria-label='discord'
+                        variant='ghost'
+                        size='lg'
+                        isRound={true}
+                        _hover={{ bg: "green.200" }}
+                        icon={<BsDiscord size='28px' />}
+                      />
+                    </HStack>
                   </Box>
-                </Box>
-              </WrapItem>
-            </Wrap>
+                </WrapItem>
+                <WrapItem>
+                  <Box bg='green.100' borderRadius='lg'>
+                    <Box m={8} color='black'>
+                      <VStack spacing={5}>
+                        <FormControl id='Name'>
+                          <FormLabel>Your Name</FormLabel>
+                          <InputGroup borderColor='black'>
+                            <InputLeftElement
+                              pointerEvents='none'
+                              children={<BsPerson color='gray.800' />}
+                            />
+                            <Input
+                              type='text'
+                              size='md'
+                              id='Name'
+                              value={formData.Name}
+                              onChange={handleInputChange}
+                            />
+                          </InputGroup>
+                        </FormControl>
+                        <FormControl id='Email'>
+                          <FormLabel>Email</FormLabel>
+                          <InputGroup borderColor='black'>
+                            <InputLeftElement
+                              pointerEvents='none'
+                              children={<MdOutlineEmail color='gray.800' />}
+                            />
+                            <Input
+                              type='text'
+                              size='md'
+                              id='Email'
+                              value={formData.Email}
+                              onChange={handleInputChange}
+                            />
+                          </InputGroup>
+                        </FormControl>
+                        <FormControl id='Message'>
+                          <FormLabel>Message</FormLabel>
+                          <Textarea
+                            borderColor='black'
+                            _hover={{
+                              borderRadius: "gray.300",
+                            }}
+                            placeholder='Enter your message'
+                            id='Message'
+                            value={formData.Message}
+                            onChange={handleInputChange}
+                          />
+                        </FormControl>
+                        <FormControl id='submit' float='right'>
+                          <Button
+                            variant='solid'
+                            bg='#0D74FF'
+                            color='white'
+                            onClick={handleSubmit}
+                          >
+                            Send Message
+                          </Button>
+                        </FormControl>
+                      </VStack>
+                    </Box>
+                  </Box>
+                </WrapItem>
+              </Wrap>
+            </Box>
           </Box>
-        </Box>
-      </Flex>
-    </Container>
+        </Flex>
+      </Container>
+    </Box>
   );
 }

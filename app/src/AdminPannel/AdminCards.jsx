@@ -31,7 +31,8 @@ const AdminCards = (update) => {
   }, []);
 
   return (
-    <Box bgColor={"green.400"}>
+    <Box bgColor={"green.400"} mt={-40}>
+      <Box bgColor={"#29335c"} h={160}></Box>
       <Heading
         pt={100}
         fontWeight={600}

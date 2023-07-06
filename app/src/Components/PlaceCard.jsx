@@ -31,7 +31,8 @@ const PlaceCard = () => {
   }, []);
 
   return (
-    <Box bgColor={"gray.400"}>
+    <Box bgColor={"gray.400"} marginTop={-40}>
+      <Box bgColor={"#29335c"} h={160}></Box>
       <Heading
         pt={100}
         fontWeight={600}

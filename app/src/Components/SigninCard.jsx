@@ -80,72 +80,78 @@ export default function SigninCard() {
   };
 
   return (
-    <Flex
-      minH={"100vh"}
-      align={"center"}
-      justify={"center"}
-      bg={useColorModeValue("green.500")}
-    >
-      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-        <Stack align={"center"}>
-          <img src={Logo} alt='logo' width={250} />
-          <Heading fontSize={"4xl"}>Sign in to your account</Heading>
-          <Text fontSize={"lg"} color={"white"}>
-            to explore and booking your next trip with us ✌️{" "}
-          </Text>
-        </Stack>
-        <Box
-          rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
-          p={8}
-        >
-          <Stack spacing={4}>
-            <form>
-              <FormControl id='email'>
-                <FormLabel>Email address</FormLabel>
-                <Input
-                  type='email'
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                />
-              </FormControl>
-              <FormControl id='password'>
-                <FormLabel>Password</FormLabel>
-                <Input
-                  type='password'
-                  value={formData.password}
-                  onChange={(e) =>
-                    setFormData({ ...formData, password: e.target.value })
-                  }
-                />
-              </FormControl>
-              <Stack spacing={10}>
-                <Stack
-                  direction={{ base: "column", sm: "row" }}
-                  align={"start"}
-                  justify={"space-between"}
-                >
-                  <Checkbox>Remember me</Checkbox>
-                  <Link color={"blue.400"}>Forgot password?</Link>
-                </Stack>
-                <Button
-                  bg={"blue.400"}
-                  color={"white"}
-                  _hover={{
-                    bg: "blue.500",
-                  }}
-                  onClick={handleSubmit}
-                >
-                  Sign in
-                </Button>
-              </Stack>
-            </form>
+    <Box mt={-40}>
+      {" "}
+      <Box bgColor={"#29335c"} h={160}></Box>
+      <Flex
+        // mt={-40}
+        // pt={40}
+        minH={"100vh"}
+        align={"center"}
+        justify={"center"}
+        bg={useColorModeValue("green.500")}
+      >
+        <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+          <Stack align={"center"}>
+            <img src={Logo} alt='logo' width={250} />
+            <Heading fontSize={"4xl"}>Sign in to your account</Heading>
+            <Text fontSize={"lg"} color={"white"}>
+              to explore and booking your next trip with us ✌️{" "}
+            </Text>
           </Stack>
-        </Box>
-      </Stack>
-    </Flex>
+          <Box
+            rounded={"lg"}
+            bg={useColorModeValue("white", "gray.700")}
+            boxShadow={"lg"}
+            p={8}
+          >
+            <Stack spacing={4}>
+              <form>
+                <FormControl id='email'>
+                  <FormLabel>Email address</FormLabel>
+                  <Input
+                    type='email'
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                  />
+                </FormControl>
+                <FormControl id='password'>
+                  <FormLabel>Password</FormLabel>
+                  <Input
+                    type='password'
+                    value={formData.password}
+                    onChange={(e) =>
+                      setFormData({ ...formData, password: e.target.value })
+                    }
+                  />
+                </FormControl>
+                <Stack spacing={10}>
+                  <Stack
+                    direction={{ base: "column", sm: "row" }}
+                    align={"start"}
+                    justify={"space-between"}
+                  >
+                    <Checkbox>Remember me</Checkbox>
+                    <Link color={"blue.400"}>Forgot password?</Link>
+                  </Stack>
+                  <Button
+                    bg={"blue.400"}
+                    color={"white"}
+                    _hover={{
+                      bg: "blue.500",
+                    }}
+                    onClick={handleSubmit}
+                  >
+                    Sign in
+                  </Button>
+                </Stack>
+              </form>
+            </Stack>
+          </Box>
+        </Stack>
+      </Flex>
+    </Box>
   );
 }
