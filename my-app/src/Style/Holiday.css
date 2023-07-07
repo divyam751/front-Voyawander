@@ -14,7 +14,7 @@ img:hover{
 }
 #innerdiv{
     display: flex;
-    font-size: 14px;
+    font-size: 14x;
     width:80%;
     justify-content: space-between;
     margin: auto;
@@ -92,4 +92,9 @@ button:hover{
 }
 .book{
     width:40%
+}
+#title{
+    width:77%;
+    margin: auto;
+    margin-bottom: 20px;
 }

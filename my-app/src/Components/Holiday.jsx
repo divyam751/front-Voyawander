@@ -1,9 +1,10 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
-import { Card, CardHeader, CardBody, CardFooter,Image,Stack,Heading,Text,Divider,ButtonGroup,Button, Flex } from '@chakra-ui/react'
+// import { Card, CardHeader, CardBody, CardFooter,Image,Stack,Heading,Text,Divider,ButtonGroup,Button, Flex } from '@chakra-ui/react'
 import styles from "../Style/Holiday.css";
 import Background from "../image/BG.PNG";
 import Cart from './Cart';
+import { Routes, useNavigate,Route } from 'react-router-dom';
 
 const initialState = {
   data: [],
@@ -41,7 +42,7 @@ const reducer = (state = initialState, action) => {
 const Holiday = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const[page,setPage]=useState(1);
- 
+  const navigate=useNavigate();
   
 
   const getData = async (page) => {
@@ -74,13 +75,21 @@ const Holiday = () => {
     return <h1>Something went wrong</h1>;
   }
 
-  console.log(data);
- const handleView=(elem)=>{
-  <Cart/>
+  // console.log(data);
+ const handleBook=(elem)=>{
+  <Cart elem={elem}/>
+  console.log(elem);
  }
+
+const navigateToCart=()=>{
+  navigate('/cart');
+  console.log("clicked")
+}
+
   return (
     <div style={{backgroundImage: "url(" + Background + ")"} }>
-      <h1>Holiday</h1>
+      <h1>Find Popular Destintions</h1>
+      <h3 id='title'>Escape the ordinary and explore the extraordinary-with our handpicked selection of destinations and travel deals,you'll be able to create the trip of your dreams </h3>
     <div id='Body' >
       {data?.map((elem, i) => (
         <div key={i} id="main">
@@ -89,9 +98,10 @@ const Holiday = () => {
             <h4>{elem.title}</h4>
             <h4>₹ {elem.cost}</h4>
           </div>
-          <h4 id="desc">{elem.description}</h4>
+          <p id="desc">{elem.description}</p>
+          <button className='book' onClick={()=>handleBook(elem)}>Book Now</button>
           <div id='booking'>
-          <button className='book' onClick={()=>(handleView(elem))}>View Booking</button>
+          <button className='book' onClick={navigateToCart }>View Booking</button>
           <button className='book'>Search hotel </button>
           </div>
         </div>
