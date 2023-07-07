@@ -12,9 +12,9 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  Link,
   useToast,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
@@ -30,33 +30,32 @@ export default function SignupCard() {
     password: "",
   });
 
-  // Handle input changes
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
     });
   };
-  // Handle success
+
   const handleSuccess = () => {
     toast({
       title: "Account created.",
       description: "We've created your account for you.",
       status: "success",
-      duration: 9000,
+      duration: 6000,
       isClosable: true,
     });
   };
-  // Handle form submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
         "http://localhost:8080/users",
         formData
-      ); // Adjust the API endpoint accordingly
-      console.log(response.data); // Optional: Log the response data
-      // Reset the form after successful submission
+      );
+      console.log(response.data);
+
       handleSuccess();
       setFormData({
         firstName: "",
@@ -159,29 +158,24 @@ export default function SignupCard() {
                     _hover={{
                       bg: "blue.500",
                     }}
-                    type='submit' // Add the submit type to the button
+                    type='submit'
                   >
                     Sign up
                   </Button>
                 </Stack>
                 <Stack pt={6} spacing={4}>
                   <Text align={"center"}>
-                    Already a user? <Link color={"blue.400"}>Login</Link>
+                    Already a user?{" "}
+                    <Link to={"/signin"} color={"blue.400"}>
+                      Login
+                    </Link>
                   </Text>
                   <Text align={"center"}>Sign up with:</Text>
                   <Stack direction='row' spacing={4} justify='center'>
-                    <Button
-                      leftIcon={<FaGoogle />}
-                      colorScheme='red'
-                      // variant='outline'
-                    >
+                    <Button leftIcon={<FaGoogle />} colorScheme='red'>
                       Sign up with Google
                     </Button>
-                    <Button
-                      leftIcon={<FaFacebook />}
-                      colorScheme='blue'
-                      // variant='outline'
-                    >
+                    <Button leftIcon={<FaFacebook />} colorScheme='blue'>
                       Sign up with Facebook
                     </Button>
                   </Stack>

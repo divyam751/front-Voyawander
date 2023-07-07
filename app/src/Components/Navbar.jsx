@@ -15,15 +15,13 @@ function Navbar() {
   return (
     <header className='transparent-navbar'>
       {" "}
-      {/* Added the "transparent-navbar" class */}
-      {/* <h1>Voyawander</h1> */}
       <img src={Logo} alt='logo' style={{ height: 70 }} />
       <Box id='headerBox'>
         <nav ref={navRef}>
           <Link to='/'>Home </Link>
-          <Link to='/#'>About Us</Link>
-          <Link to='/#'>Hotels</Link>
-          <Link to='/#'>Flights</Link>
+          <Link to='/about'>About Us</Link>
+          <Link to='/hotels'>Hotels</Link>
+          <Link to='/Flight'>Flights</Link>
           <Link to='/holidays'>Holidays</Link>
           <Link to='/contact'>Contact Us</Link>
 
@@ -33,7 +31,6 @@ function Navbar() {
             </Button>
           </WrapItem>
           <WrapItem>
-            {/* <Button colorScheme='whatsapp'>Sign Up</Button> */}
             <Button colorScheme='whatsapp'>
               <Link to='/signup'>Sign Up</Link>
             </Button>

@@ -42,7 +42,6 @@ export default function Contact() {
       [e.target.id]: e.target.value,
     });
   };
-  // Handle success
   const handleSuccess = () => {
     toast({
       title: "Message sent.",
@@ -52,7 +51,6 @@ export default function Contact() {
       isClosable: true,
     });
   };
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -83,8 +81,6 @@ export default function Contact() {
         mt={0}
         centerContent
         overflow='hidden'
-        // p={40}
-        // marginTop={-40}
       >
         <Flex>
           <Box

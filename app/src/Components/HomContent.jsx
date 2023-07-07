@@ -11,6 +11,9 @@ import {
 } from "@chakra-ui/react";
 
 function HomeContent() {
+  const handleButton = () => {
+    window.location.href = "/holidays";
+  };
   return (
     <>
       <link
@@ -36,7 +39,7 @@ function HomeContent() {
               with Your Beloved Family..
             </Text>
           </Heading>
-          {/* <Text color={"gray.500"}> */}
+
           <Text color={"white"}>
             Join our community of travel enthusiasts and discover new places.
             meet new people, and make lasting memories. Book with us and
@@ -51,6 +54,7 @@ function HomeContent() {
           >
             <Button
               colorScheme={"green"}
+              onClick={handleButton}
               bg={"green.400"}
               rounded={"full"}
               px={6}
@@ -60,13 +64,12 @@ function HomeContent() {
             >
               Book Now
             </Button>
-            <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+            <Button variant={"link"} color={"white"} size={"sm"}>
               Learn more
             </Button>
             <Box>
               <Icon
                 as={Arrow}
-                // color={useColorModeValue("gray.800", "gray.300")}
                 color={useColorModeValue("white")}
                 w={71}
                 position={"absolute"}
@@ -82,7 +85,7 @@ function HomeContent() {
                 transform={"rotate(10deg)"}
                 color={"white"}
               >
-                Starting at ₹ 3500/-
+                Starting at ₹ 4500/-
               </Text>
             </Box>
           </Stack>

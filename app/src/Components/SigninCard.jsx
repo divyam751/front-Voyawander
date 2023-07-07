@@ -26,7 +26,6 @@ export default function SigninCard() {
     password: "",
   });
 
-  // Handle success
   const handleSuccessLogin = (email) => {
     toast({
       title: "Login Successful",
@@ -36,12 +35,13 @@ export default function SigninCard() {
       isClosable: true,
     });
     console.log(email);
-    if (email === "mi.divyam@gmail.com") {
+    if (email === "admin@voyawander.com") {
       window.location.href = "/admin";
+    } else {
+      window.location.href = "/booking";
     }
   };
 
-  // Handle Invalid
   const handleInvalidLogin = () => {
     toast({
       title: "Invalid Login",
@@ -75,7 +75,6 @@ export default function SigninCard() {
       }
     } catch (error) {
       console.error("Error:", error);
-      // toast.error("An error occurred");
     }
   };
 
@@ -84,8 +83,6 @@ export default function SigninCard() {
       {" "}
       <Box bgColor={"#29335c"} h={160}></Box>
       <Flex
-        // mt={-40}
-        // pt={40}
         minH={"100vh"}
         align={"center"}
         justify={"center"}
