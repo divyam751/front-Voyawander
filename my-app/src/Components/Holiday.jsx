@@ -1,6 +1,9 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
-import { Card, CardHeader, CardBody, CardFooter,Image,Stack,Heading,Text,Divider,ButtonGroup,Button } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter,Image,Stack,Heading,Text,Divider,ButtonGroup,Button, Flex } from '@chakra-ui/react'
+import styles from "../Style/Holiday.css";
+import Background from "../image/BG.PNG";
+import Cart from './Cart';
 
 const initialState = {
   data: [],
@@ -37,11 +40,19 @@ const reducer = (state = initialState, action) => {
 
 const Holiday = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const[page,setPage]=useState(1);
+ 
+  
 
-  const getData = async () => {
+  const getData = async (page) => {
     dispatch({ type: 'FETCH_LOADING' });
     try {
-      const response = await axios.get('https://voyawander-server.onrender.com/hotels');
+      const response = await axios.get('https://voyawander-server.onrender.com/hotels',{
+        params:{
+          _page:page,
+          _limit:6,
+        }
+      });
       dispatch({ type: 'FETCH_SUCCESS', payload: response.data });
       console.log(response);
     } catch (err) {
@@ -51,8 +62,8 @@ const Holiday = () => {
   };
 
   useEffect(() => {
-    getData();
-  }, []);
+    getData(page);
+  }, [page]);
 
   const { data, error, loading } = state;
 
@@ -64,46 +75,35 @@ const Holiday = () => {
   }
 
   console.log(data);
-
+ const handleView=(elem)=>{
+  <Cart/>
+ }
   return (
-    <div>
+    <div style={{backgroundImage: "url(" + Background + ")"} }>
+      <h1>Holiday</h1>
+    <div id='Body' >
       {data?.map((elem, i) => (
-        <div key={i}>
-          {/* <img src={elem.url} alt="url" />
-          <div>
-            <p>{elem.title}</p>
-            <p>{elem.description}</p>
-            <p>{elem.cost}</p>
-          </div> */}
-          <Card maxW='sm'>
-  <CardBody>
-    <Image
-      src={elem.url}
-      alt='URL'
-      borderRadius='lg'
-    />
-    <Stack mt='6' spacing='3'>
-      <Heading size='md'>{elem.title}</Heading>
-      <Text>
-        {elem.description}
-      </Text>
-      <Text color='blue.600' fontSize='2xl'>
-        {elem.cost}
-      </Text>
-    </Stack>
-  </CardBody>
-  <Divider />
-  <CardFooter>
-    <ButtonGroup spacing='2'>
-      <Button variant='solid' colorScheme='blue'>
-        Book
-      </Button>
-    </ButtonGroup>
-  </CardFooter>
-</Card>
+        <div key={i} id="main">
+          <img id="image" src={elem.url} alt="url" />
+          <div id="innerdiv">
+            <h4>{elem.title}</h4>
+            <h4>₹ {elem.cost}</h4>
+          </div>
+          <h4 id="desc">{elem.description}</h4>
+          <div id='booking'>
+          <button className='book' onClick={()=>(handleView(elem))}>View Booking</button>
+          <button className='book'>Search hotel </button>
+          </div>
         </div>
       ))}
-    </div>
+      </div>
+          <div id='body2'>
+            <button className='pg' onClick={()=>setPage(page-1)}>Previous</button>
+            <h3 id="page-number">{page}</h3>
+            <button className='pg' onClick={()=>setPage(page+1)}>Next</button>
+          </div>
+      </div>
+    
   );
 };
 
