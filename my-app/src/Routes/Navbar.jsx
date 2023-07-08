@@ -2,7 +2,8 @@ import {Link} from "react-router-dom"
 function Navbar() {
     const links = [
         {path:'/holiday',title:"Holiday"},
-        {path:'/cart',title:"Cart"}
+        {path:'/cart',title:"Cart"},
+        {path:'/hotel',title:"Hotel"}
     ]
     return(
         <div className = "navbar" >

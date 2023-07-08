@@ -85,16 +85,53 @@ button:hover{
     margin:auto;
     background-color: white;
 }
-#booking{
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-}
 .book{
     width:40%
-}
+ }
+/* #booking{
+    display: flex;
+    justify-content: space-between;
+} */
+
 #title{
     width:77%;
     margin: auto;
     margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 970px) {
+    #Body{
+        display: grid;
+        grid-template-columns:repeat(2,1fr) ;
+        margin-left: 5px;
+    }
+}
+@media only screen and (max-width: 700px) {
+   
+    
+   
+    /* #location{
+        width:50%;
+        display: grid;
+        grid-template-columns:repeat(2,1fr) ;
+        gap: 50px;
+        margin: auto;
+    } */
+    #image{
+        width:140%;
+       margin-left: -40px; 
+    }
+    
+}
+@media only screen and (max-width: 500px) {
+    #Body{
+        display: grid;
+        grid-template-columns:repeat(1,1fr) ;
+        margin-left: 5px;
+        
+    }
+    #image{
+        width:100%;
+        padding-left: 40px;
+    }
 }
