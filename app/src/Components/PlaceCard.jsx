@@ -18,18 +18,58 @@ import {
   InputLeftElement,
   Icon,
   Flex,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  Spinner,
 } from "@chakra-ui/react";
 import { debounce } from "lodash";
 import { FaSearch } from "react-icons/fa";
+
+const ModalWithSpinner = ({ isOpen, onClose }) => {
+  const [showSpinner, setShowSpinner] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSpinner(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent>
+        {/* <ModalHeader>Loading...</ModalHeader> */}
+        <ModalBody
+          display='flex'
+          justifyContent='center'
+          alignItems='center'
+          bg={"#3199da"}
+        >
+          {/* {showSpinner && <Spinner size='xl' />} */}
+          <img
+            src='https://i.pinimg.com/originals/eb/70/7a/eb707ae7096cc8df384f1bf87dab547a.gif'
+            alt=''
+          />
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+  );
+};
 
 const PlaceCard = () => {
   const [places, setPlaces] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/places")
+      .get("https://voyawander-json.onrender.com/places")
       .then((response) => {
         setPlaces(response.data);
       })
@@ -46,17 +86,24 @@ const PlaceCard = () => {
     place.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  async function handleDelete() {
-    const url = "http://localhost:8080/data/1"; // Replace with your delete endpoint
+  async function handleDelete(newData) {
+    const url = "https://voyawander-json.onrender.com/data/1";
     try {
       const response = await axios.delete(url);
       console.log("Data deleted successfully:", response.data);
     } catch (error) {
       console.error("Error deleting data:", error.response.data);
     }
+
+    try {
+      await axios.post("https://voyawander-json.onrender.com/data", newData);
+      console.log("Data stored successfully");
+    } catch (error) {
+      console.error("Error storing data:", error);
+    }
   }
 
-  const handleClick = (place) => {
+  const handleClick = async (place) => {
     const newData = {
       placeName: place.name,
       placePrice: place.price,
@@ -65,39 +112,33 @@ const PlaceCard = () => {
       id: 1,
     };
 
-    axios
-      .get("http://localhost:8080/data")
-      .then((response) => {
-        setData(response.data.length);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error storing data:", error);
-      });
+    setIsModalOpen(true); // Open the modal
 
-    if (data !== null) {
-      handleDelete();
-
-      axios
-        .post("http://localhost:8080/data", newData)
-        .then((response) => {
-          console.log("Data stored:", response.data);
-        })
-        .catch((error) => {
-          console.error("Error storing data:", error);
-        });
-    } else {
-      axios
-        .post("http://localhost:8080/data", newData)
-        .then((response) => {
-          console.log("Data stored:", response.data);
-        })
-        .catch((error) => {
-          console.error("Error storing data:", error);
-        });
+    try {
+      const response = await axios.get(
+        "https://voyawander-json.onrender.com/data"
+      );
+      setData(response.data.length);
+      console.log(data);
+    } catch (error) {
+      console.error("Error storing data:", error);
     }
 
-    window.location.href = "/hotels";
+    if (data !== null) {
+      handleDelete(newData);
+    }
+
+    try {
+      await axios.post("https://voyawander-json.onrender.com/data", newData);
+      console.log("Data stored successfully");
+    } catch (error) {
+      console.error("Error storing data:", error);
+    }
+
+    setTimeout(() => {
+      setIsModalOpen(false); // Close the modal after 5 seconds
+      window.location.href = "/hotels";
+    }, 4000);
   };
 
   return (
@@ -159,6 +200,10 @@ const PlaceCard = () => {
           </ChakraCard>
         ))}
       </Grid>
+      <ModalWithSpinner
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </Box>
   );
 };

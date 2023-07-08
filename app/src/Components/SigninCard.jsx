@@ -56,7 +56,9 @@ export default function SigninCard() {
     e.preventDefault();
 
     try {
-      const response = await axios.get("http://localhost:8080/users");
+      const response = await axios.get(
+        "https://voyawander-json.onrender.com/users"
+      );
       const users = response.data;
       console.log(users);
 

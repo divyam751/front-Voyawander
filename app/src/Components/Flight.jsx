@@ -27,14 +27,19 @@ const Flight = () => {
       id: lastDataObject.id,
     };
     axios
-      .patch("http://localhost:8080/data/" + lastDataObject.id, updatedData)
+      .patch(
+        "https://voyawander-json.onrender.com/data/" + lastDataObject.id,
+        updatedData
+      )
       .then((response) => {
         console.log(response);
       })
       .catch((error) => {
         console.log(error);
       });
-    window.location.href = "/signIn";
+    setTimeout(() => {
+      window.location.href = "/signIn";
+    }, 3000);
   };
 
   useEffect(() => {
@@ -43,7 +48,7 @@ const Flight = () => {
 
   const fetchFlightData = async () => {
     axios
-      .get("http://localhost:8080/flights")
+      .get("https://voyawander-json.onrender.com/flights")
       .then((response) => {
         setFlights(response.data);
         console.log(response.data);
@@ -54,7 +59,7 @@ const Flight = () => {
 
     //booked data
     axios
-      .get("http://localhost:8080/data")
+      .get("https://voyawander-json.onrender.com/data")
       .then((booking) => {
         setLastBookedData(booking.data[booking.data.length - 1]);
       })

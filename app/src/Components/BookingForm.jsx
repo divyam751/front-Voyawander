@@ -34,10 +34,6 @@ const BookingForm = () => {
     }
   };
 
-  // const handleSubmit = () => {
-  //   // Perform form submission logic here
-  //   handleSuccess();
-  // };
   const handleSubmit = () => {
     const updatedData = {
       formName: name,
@@ -50,16 +46,18 @@ const BookingForm = () => {
       id: 1,
     };
     axios
-      .patch("http://localhost:8080/data/" + 1, updatedData)
+      .patch("https://voyawander-json.onrender.com/data/" + 1, updatedData)
       .then((response) => {
         console.log(response);
       })
       .catch((error) => {
         console.log(error);
       });
-    // window.location.href = "/signIn";
-    window.location.href = "/details";
+
     handleSuccess();
+    setTimeout(() => {
+      window.location.href = "/details";
+    }, 5000);
   };
 
   const handleSuccess = () => {

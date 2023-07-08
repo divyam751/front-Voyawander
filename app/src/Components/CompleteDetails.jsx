@@ -18,7 +18,7 @@ const CompleteDetails = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/data")
+      .get("https://voyawander-json.onrender.com/data")
       .then((response) => {
         setDetails(response.data[0]);
       })
@@ -26,6 +26,7 @@ const CompleteDetails = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
+  console.log(details);
 
   if (!details) {
     return <Text>Loading...</Text>;

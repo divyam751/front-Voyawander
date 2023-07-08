@@ -51,7 +51,7 @@ export default function SignupCard() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/users",
+        "https://voyawander-json.onrender.com/users",
         formData
       );
       console.log(response.data);

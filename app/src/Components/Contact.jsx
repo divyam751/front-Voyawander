@@ -55,11 +55,11 @@ export default function Contact() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/messages",
+        "https://voyawander-json.onrender.com/messages",
         formData
-      ); // Adjust the API endpoint accordingly
-      console.log(response.data); // Optional: Log the response data
-      // Reset the form after successful submission
+      );
+      console.log(response.data);
+
       handleSuccess();
       setFormData({
         Name: "",

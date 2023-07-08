@@ -22,7 +22,7 @@ const Hotel = () => {
   const [lastBookedHotel, setLastBookedHotel] = useState(null);
 
   const handleClick = (hotel) => {
-    const lastDataObject = lastBookedHotel; // Get the last present object from the data array
+    const lastDataObject = lastBookedHotel;
     const updatedData = {
       hotelName: hotel.name,
       hotelPrice: hotel.room_price,
@@ -32,19 +32,25 @@ const Hotel = () => {
       id: lastDataObject.id,
     };
     axios
-      .patch("http://localhost:8080/data/" + lastDataObject.id, updatedData)
+      .patch(
+        "https://voyawander-json.onrender.com/data/" + lastDataObject.id,
+        updatedData
+      )
       .then((response) => {
         console.log(response);
       })
       .catch((error) => {
         console.log(error);
       });
-    window.location.href = "/flight";
+
+    setTimeout(() => {
+      window.location.href = "/flight";
+    }, 3000);
   };
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/hotels")
+      .get("https://voyawander-json.onrender.com/hotels")
       .then((response) => {
         setHotels(response.data);
       })
@@ -52,7 +58,7 @@ const Hotel = () => {
         console.log(error);
       });
     axios
-      .get("http://localhost:8080/data")
+      .get("https://voyawander-json.onrender.com/data")
       .then((booking) => {
         setLastBookedHotel(booking.data[booking.data.length - 1]);
       })

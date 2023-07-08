@@ -18,7 +18,7 @@ const FinalPage = () => {
   const containerRef = useRef(null);
 
   async function handleDelete() {
-    const url = "http://localhost:8080/data/1"; // Replace with your delete endpoint
+    const url = "https://voyawander-json.onrender.com/data/1"; // Replace with your delete endpoint
     try {
       const response = await axios.delete(url);
       console.log("Data deleted successfully:", response.data);
@@ -29,7 +29,7 @@ const FinalPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/data")
+      .get("https://voyawander-json.onrender.com/data")
       .then((response) => {
         setDetails(response.data[0]);
       })
@@ -78,20 +78,22 @@ const FinalPage = () => {
       }, 7000);
 
       setTimeout(() => {
-        window.location.href = "/signIn";
+        window.location.href = "/";
       }, 8000);
     }
   }, [details]);
 
   if (!details) {
     return (
-      <Box mt={-20} bg={"#d5f6ff"}>
+      // <Box mt={-20} bg={"#d5f6ff"}>
+      <Box mt={-20} bg={"white"}>
         <Box bgColor={"#29335c"} h={20}></Box>
 
-        <Text fontSize={30}>Data has been deleted</Text>
+        <Text fontSize={30}>Data has been Downloaded</Text>
         <Flex justifyContent={"center"}>
           <img
-            src='https://cdn.dribbble.com/users/2359873/screenshots/6714149/the-trash-can.gif'
+            // src='https://cdn.dribbble.com/users/2359873/screenshots/6714149/the-trash-can.gif'
+            src='https://cdn.dribbble.com/users/1751799/screenshots/5512482/check02.gif'
             alt='dust'
           />
         </Flex>
