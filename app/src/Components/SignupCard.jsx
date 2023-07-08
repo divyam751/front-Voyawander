@@ -45,6 +45,7 @@ export default function SignupCard() {
       duration: 6000,
       isClosable: true,
     });
+    window.location.href = "/signIn";
   };
 
   const handleSubmit = async (e) => {

@@ -38,7 +38,7 @@ const Flight = () => {
         console.log(error);
       });
     setTimeout(() => {
-      window.location.href = "/signIn";
+      window.location.href = "/signup";
     }, 3000);
   };
 
