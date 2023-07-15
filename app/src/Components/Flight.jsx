@@ -129,7 +129,7 @@ const Flight = () => {
                       <Text> | {flight.totalTime}</Text>
                       <Text fontSize={10}>{flight.nonStop}</Text>
                     </Flex>
-                    <Text pl={20}>{flight.price}</Text>
+                    <Text pl={20}>₹ {flight.price} /-</Text>
                     <Button
                       ml={20}
                       variant='solid'

@@ -149,12 +149,7 @@
       "image": "https://pix8.agoda.net/hotelImages/5073592/0/e0ba7ea6a3be45153849ed3a9e9c45c6.jpg?ce=0&isSkia=true&s=512x384",
       "room_price": 5000,
       "rating": 5,
-      "facilities": [
-        "AC",
-        "Free-WiFi",
-        "Parking",
-        "Free Pool Access"
-      ],
+      "facilities": ["AC", "Free-WiFi", "Parking", "Free Pool Access"],
       "address": "123 Main Street,"
     },
     {
@@ -163,12 +158,7 @@
       "image": "https://pix8.agoda.net/property/25343938/349002519/e807d062642184bf569699b958401eec.jpg?ca=19&ce=1&s=1024x768&isSkia=true",
       "room_price": 4000,
       "rating": 4,
-      "facilities": [
-        "AC",
-        "Breakfast",
-        "Free-WiFi",
-        "Parking"
-      ],
+      "facilities": ["AC", "Breakfast", "Free-WiFi", "Parking"],
       "address": "345 Paradise Lane,"
     },
     {
@@ -177,12 +167,7 @@
       "image": "https://pix8.agoda.net/hotelImages/706340/-1/e3653d8e1d503df58c5bfa04cc44150d.jpg?ca=13&ce=1&s=1024x768&isSkia=true",
       "room_price": 3000,
       "rating": 4,
-      "facilities": [
-        "AC",
-        "Free-WiFi",
-        "Parking",
-        "Free Pool Access"
-      ],
+      "facilities": ["AC", "Free-WiFi", "Parking", "Free Pool Access"],
       "address": "62 Taj Mahal Road,"
     },
     {
@@ -191,12 +176,7 @@
       "image": "https://pix8.agoda.net/hotelImages/706/706340/706340_16092217380046807687.png?ca=6&ce=1&s=1024x768&isSkia=true",
       "room_price": 4000,
       "rating": 5,
-      "facilities": [
-        "AC",
-        "Breakfast",
-        "Free-WiFi",
-        "Parking"
-      ],
+      "facilities": ["AC", "Breakfast", "Free-WiFi", "Parking"],
       "address": "32 Maharaja Lane,"
     },
     {
@@ -205,12 +185,7 @@
       "image": "https://pix8.agoda.net/hotelImages/7457696/0/3b153483a3a7815b240dcdb47df481f4.jpg?ca=9&ce=1&s=1024x768&isSkia=true",
       "room_price": 4300,
       "rating": 4,
-      "facilities": [
-        "AC",
-        "Breakfast",
-        "Free-WiFi",
-        "Parking"
-      ],
+      "facilities": ["AC", "Breakfast", "Free-WiFi", "Parking"],
       "address": "13/2 Resort Road ,"
     },
     {
@@ -219,12 +194,7 @@
       "image": "https://pix8.agoda.net/hotelImages/300/300693/300693_16042515360041779358.jpg?ca=13&ce=1&s=1024x768&isSkia=true",
       "room_price": 3500,
       "rating": 3,
-      "facilities": [
-        "AC",
-        "Breakfast",
-        "Free-WiFi",
-        "Parking"
-      ],
+      "facilities": ["AC", "Breakfast", "Free-WiFi", "Parking"],
       "address": "31 Chwari Bajar Lane, "
     }
   ],
@@ -290,13 +260,6 @@
       "email": "admin@voyawander.com",
       "password": "admin",
       "id": 1
-    },
-    {
-      "firstName": "Shyam",
-      "lastName": "Singh",
-      "email": "singh.shyam@gmail.com",
-      "password": "1234",
-      "id": 2
     }
   ],
   "messages": [

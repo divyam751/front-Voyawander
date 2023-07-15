@@ -16,7 +16,7 @@ const AdminCards = (update) => {
   const [msgs, setMsgs] = useState([]);
   const getMessages = () => {
     return axios
-      .get("http://localhost:8080/messages")
+      .get("https://voyawander-json.onrender.com/messages")
       .then((response) => {
         setMsgs(response.data);
         console.log(response.data);
